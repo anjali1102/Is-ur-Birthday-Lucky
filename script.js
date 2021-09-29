@@ -1,24 +1,18 @@
 const dateOfBirth = document.querySelector("#date-pf-birth");
 const luckyNumber = document.querySelector("#lucky-number");
 const checkNumberButton = document.querySelector("#check-number");
+const outputBox = document.querySelector("#output-box");
 
-function compareValues(sum, luckyNumber) {
-  console.log("#lucky-number");
-}
-
-function checkNumberIsLucky() {
-  const dob = dateOfBirth.value;
-  const sum = calculateSum(dob);
-  console.log(sum);
-}
-
-function calculateSum(dob) {
-  dob = dob.replaceAll("-", "");
-  let sum = 0;
-  for (let index = 0; index < dob.length; index++) {
-    sum = sum + Number(dob.charAt(index));
+checkNumberButton.addEventListener("click", function () {
+  var dob = dateOfBirth.value;
+  var validdob = dob.replaceAll("-", "");
+  let dateSum = 0;
+  for (let i = 0; i < validdob.length; i++) {
+    dateSum = dateSum + Number(validdob.charAt(i));
   }
-  return sum;
-}
-
-checkNumberButton.addEventListener("click", checkNumberIsLucky);
+  if (dateSum % Number(luckyNumber.value) === 0) {
+    outputBox.innerText = "YAY ! , Your birthday is lucky 🚀";
+  } else {
+    outputBox.innerText = "Your Birthday is not lucky 😢";
+  }
+});
