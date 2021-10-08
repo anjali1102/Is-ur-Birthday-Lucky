@@ -10,9 +10,9 @@
     <h1>Is Your Birthday Lucky ? 🎂</h1>
     <div class="container">
       <label for="date-of-birth">Date Of Birth:</label>
-      <input type="date" id="date-pf-birth" oninput="this.value = Math.abs(this.value)" />
+      <input type="date" id="date-pf-birth"  />
       <label for="lucky-number">Lucky Number</label>
-      <input type="number" id="lucky-number" />
+      <input type="number" id="lucky-number" oninput="this.value = Math.abs(this.value)" />
       <button id="check-number">Check Number</button>
       <div id="output-box"></div>
     </div>
